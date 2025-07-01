@@ -1,9 +1,12 @@
+import TunerNeedle from "./TunerNeedle";
+
 import {
   freqToNoteNumber,
   getNoteName,
   getCentsOff,
   noteNumberToFreq
 } from "../utils/pitchUtils";
+
 
 import React, { useEffect, useRef, useState } from "react";
 
@@ -36,7 +39,7 @@ const MicInput = () => {
         audioContextRef.current = new (window.AudioContext || window.webkitAudioContext)();
         const source = audioContextRef.current.createMediaStreamSource(stream);
         const analyser = audioContextRef.current.createAnalyser();
-        analyser.fftSize = 512;
+        analyser.fftSize = 2048;
         const bufferLength = analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
 
@@ -102,12 +105,12 @@ const MicInput = () => {
 
         const roundedPitch = avgPitch.toFixed(2);
         if (Math.abs(avgPitch - (lastStablePitch.current || 0)) > 1) {
-        lastStablePitch.current = avgPitch;
-        setPitch(roundedPitch);
+            lastStablePitch.current = avgPitch;
+            setPitch(roundedPitch);
 
-        const noteNum = freqToNoteNumber(avgPitch);
-        setNote(getNoteName(noteNum));
-        setCents(getCentsOff(avgPitch, noteNum));
+            const noteNum = freqToNoteNumber(avgPitch);
+            setNote(getNoteName(noteNum));
+            setCents(getCentsOff(avgPitch, noteNum));
         }
 
         } else {
@@ -137,11 +140,12 @@ const MicInput = () => {
       </div>
 
         {pitch && (
-        <p style={{ marginTop: "1rem" }}>
-            Detected pitch: <strong>{pitch} Hz</strong>
-        </p>
-        )}
-
+            <div style={{ marginTop: "1rem" }}>
+                <p>Detected pitch: <strong>{pitch} Hz</strong></p>
+                <p>Note: <strong>{note}</strong></p>
+                <TunerNeedle cents={cents} />
+            </div>
+            )}
 
     </div>
   );
