@@ -14,8 +14,11 @@ export function getNoteName(noteNumber) {
   return `${note}${octave}`;
 }
 
-export function getCentsOff(freq, noteNumber) {
-  return Math.floor(1200 * Math.log2(freq / noteNumberToFreq(noteNumber)));
+export function getCentsOff(freq, targetFreq) {
+  if (!freq || !targetFreq || freq <= 0 || targetFreq <= 0) return 0;
+  const ratio = freq / targetFreq;
+  const cents = 1200 * Math.log2(ratio);
+  return Math.round(cents);
 }
 
 export function noteNumberToFreq(note) {
