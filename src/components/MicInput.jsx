@@ -214,6 +214,13 @@ const MicInput = () => {
         </select>
       </div>
 
+        {targetNote && (
+    <p style={{ margin: "1rem 0", fontSize: "1rem" }}>
+        Expected pitch: <strong>{Math.round(standardTuning[targetNote])} Hz</strong>
+    </p>
+    )}
+
+
       {pitch && (
         <div style={{ marginTop: "1.5rem" }}>
           <p style={{ fontSize: "1.25rem", margin: "1rem 0" }}>
