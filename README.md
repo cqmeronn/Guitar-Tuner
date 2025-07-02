@@ -1,12 +1,31 @@
-# React + Vite
+# 🎸 Guitar Tuner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive web-based guitar tuner built with React and Web Audio API.  
+It detects pitch from your microphone input in real time and shows tuning accuracy with a rotating needle interface.
 
-Currently, two official plugins are available:
+## 🎯 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎤 Microphone pitch detection (uses autocorrelation)
+- 🎯 Tuning needle that shows sharp/flat offset
+- 📏 Cents offset display and color-coded feedback
+- 📱 Mobile-friendly responsive layout
+- 🎵 String selection with expected pitch display
+- ✅ Helpful tuning labels: `In Tune`, `Very Sharp`, `Very Flat`
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧪 Technologies
+
+- React + Vite
+- Web Audio API
+- CSS + inline styles for layout
+
+---
+
+## 📦 Getting Started (Dev)
+
+```bash
+git clone https://github.com/cqmeronn/Guitar-Tuner
+cd guitar-tuner-web
+npm install
+npm run dev
