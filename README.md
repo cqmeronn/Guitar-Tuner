@@ -3,6 +3,12 @@
 A responsive web-based guitar tuner built with React and Web Audio API.  
 It detects pitch from your microphone input in real time and shows tuning accuracy with a rotating needle interface.
 
+## 🔗 Live Demo
+
+👉 [Try the tuner online](https://guitar-tuner-taupe.vercel.app/)  
+
+---
+
 ## 🎯 Features
 
 - 🎤 Microphone pitch detection (uses autocorrelation)
