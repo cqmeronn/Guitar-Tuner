@@ -94,7 +94,7 @@ const MicInput = () => {
 
     const stringSuffix = (i) => {
     const s = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
-    return s[i] || `${i + 1}th`;
+    return s[i - 1] || `${i}th`;
     };
 
 
@@ -212,11 +212,14 @@ const MicInput = () => {
           value={targetNote}
           onChange={(e) => setTargetNote(e.target.value)}
         >
-          {Object.keys(standardTuning).map((noteKey, index) => (
+        {Object.keys(standardTuning)
+        .map((noteKey, index) => (
             <option key={noteKey} value={noteKey}>
-              {noteKey} ({stringSuffix(index + 1)} string)
+            {noteKey} ({stringSuffix(6 - index)} string)
             </option>
-          ))}
+        ))}
+
+
         </select>
       </div>
 
