@@ -92,6 +92,12 @@ const MicInput = () => {
     return sampleRate / T0;
   };
 
+    const stringSuffix = (i) => {
+    const s = ["1st", "2nd", "3rd", "4th", "5th", "6th"];
+    return s[i] || `${i + 1}th`;
+    };
+
+
   const startMic = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     audioContextRef.current = new (window.AudioContext ||
@@ -206,9 +212,9 @@ const MicInput = () => {
           value={targetNote}
           onChange={(e) => setTargetNote(e.target.value)}
         >
-          {Object.keys(standardTuning).map((noteKey) => (
+          {Object.keys(standardTuning).map((noteKey, index) => (
             <option key={noteKey} value={noteKey}>
-              {noteKey} ({Object.keys(standardTuning).indexOf(noteKey) + 1}th string)
+              {noteKey} ({stringSuffix(index + 1)} string)
             </option>
           ))}
         </select>

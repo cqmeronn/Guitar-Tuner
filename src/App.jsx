@@ -4,7 +4,10 @@ import MicInput from "./components/MicInput";
 function App() {
   return (
     <div className="app" style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Guitar Tuner 🎸</h1>
+      <div style={{ textAlign: "center", marginTop: "1rem" }}>
+        <h1>Guitar Tuner 🎸</h1>
+      </div>
+
       <MicInput />
     </div>
   );
