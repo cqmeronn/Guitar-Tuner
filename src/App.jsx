@@ -1,6 +1,5 @@
 import React from "react";
 import MicInput from "./components/MicInput";
-import bgImage from "./assets/background.jpg";
 
 function App() {
   return (
@@ -10,9 +9,6 @@ function App() {
         minHeight: "100vh",
         padding: "2rem",
         fontFamily: "sans-serif",
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
       <div style={{ textAlign: "center", marginTop: "1rem" }}>
