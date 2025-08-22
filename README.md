@@ -30,10 +30,13 @@ It detects pitch from your microphone input in real time and shows tuning accura
 
 ## Screenshot
 
+This shows a perfectly tuned string.
 ![Tuned String!](images/image-3.png)
 
+This one is very sharp and needs tuning.
 ![Very out of tune String!](images/image-4.png)
 
+Here's how it looks on a mobile phone.
 ![Works on the phone too!](images/image-5.png)
 
 ---
