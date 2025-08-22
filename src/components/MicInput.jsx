@@ -183,11 +183,16 @@ const MicInput = () => {
       style={{
         maxWidth: "600px",
         margin: "2rem auto",
-        padding: "1rem",
+        padding: "2rem",
         fontFamily: "sans-serif",
         textAlign: "center",
+        background: "rgba(255, 255, 255, 0.85)",
+        borderRadius: "20px",
+        boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)",
+        border: "2px solid #ddd",
       }}
     >
+
       <button onClick={startMic} disabled={isListening}>
         {isListening ? "Mic Active" : "Start Microphone"}
       </button>
